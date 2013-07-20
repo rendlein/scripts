@@ -1,0 +1,9 @@
+#!/usr/local/bin/bash
+
+PID=`ps ux | grep "$1" | grep -v "grep" | echo $?`
+
+if [ "$PID" -eq "0" ] ; then
+    echo "0"
+else 
+    echo "1"
+fi
