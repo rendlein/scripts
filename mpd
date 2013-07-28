@@ -1,3 +1,3 @@
 #!/bin/sh
-sed -I ".bk" 's/play/pause/' $HOME/.musicpd/state && \
+sed -I ".bk" 's/state: play/state: pause/' $HOME/.musicpd/state && \
     musicpd 
