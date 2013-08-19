@@ -1,8 +1,8 @@
 #!/usr/local/bin/bash
 
-PID=`ps ux | grep "$1" | grep -v "grep" | echo $?`
+PID=`ps ux | grep "$1" | grep -v "grep" | awk '{print $2}'`
 
-if [ "$PID" -eq "0" ] ; then
+if [ -z "$PID" ] ; then
     echo "0"
 else 
     echo "1"
