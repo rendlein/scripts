@@ -1,3 +1,0 @@
-#!/usr/local/bin/bash
-sed -I ".bk" 's/state: play/state: pause/' $HOME/.musicpd/state && \
-    musicpd &> ~/.logs/mpd
