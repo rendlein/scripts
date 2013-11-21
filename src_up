@@ -1,0 +1,17 @@
+#!/usr/local/bin/bash
+
+SRC_DIR="$HOME/.src/"
+
+for i in $(ls $SRC_DIR); do
+    tmp="$SRC_DIR$i"
+    echo
+    echo "-- UPDATING $tmp --"
+    echo
+
+    cd $tmp
+    if [ -d ".git" ]; then
+        git pull
+    elif [ -d ".svn" ]; then
+        svn up
+    fi
+done
