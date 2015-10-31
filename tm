@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash
+#!/bin/sh
 
 RUNNING_P=`ps ux | grep "[t]mux"`
 

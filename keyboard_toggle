@@ -1,9 +1,0 @@
-#!/bin/sh
-
-LAYOUT=`setxkbmap -query | grep layout | awk '{print $2}'`
-
-if [ "us" = "$LAYOUT" ] ; then
-    setxkbmap fr
-else 
-    setxkbmap us
-fi
