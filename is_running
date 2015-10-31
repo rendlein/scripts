@@ -1,9 +1,11 @@
-#!/usr/local/bin/bash
+#!/bin/sh
 
-PID=`ps ux | grep "$1" | grep -v "grep" | awk '{print $2}'`
+PID=`ps aux | grep "$1" | grep -v "grep" | awk '{print $2}' | head -1`
 
-if [ -z "$PID" ] ; then
-    echo "0"
-else 
+echo $PID
+
+if [ ! -z "$PID" -a  "$PID" -gt 1 ] ; then
     echo "1"
+else 
+    echo "0"
 fi

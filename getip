@@ -1,4 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
-ifconfig | grep "inet addr" | grep -v "127.0.0.1" | \
-    awk '{print $2}' | cut -c6-
+if [ `uname` = "FreeBSD" ]; then
+    ifconfig | grep "inet" | grep -v "inet6" | grep -v "127.0.0.1" | \
+        awk '{print $2}'
+else # Linux
+    ifconfig | grep "inet addr" | grep -v "127.0.0.1" | \
+        awk '{print $2}' | cut -c6-
+fi
