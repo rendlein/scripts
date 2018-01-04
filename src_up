@@ -1,6 +1,10 @@
 #!/bin/sh
 
-SRC_DIR="$HOME/.src/"
+if [ $# -eq 0 ] ; then
+    SRC_DIR="$HOME/.src/"
+else
+    SRC_DIR="$1"
+fi
 
 for i in $(ls $SRC_DIR); do
     tmp="$SRC_DIR$i"
